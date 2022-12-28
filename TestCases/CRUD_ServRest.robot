@@ -2,14 +2,12 @@
 Documentation   Documentacao da API: https://serverest.dev/#/
 Library     RequestsLibrary
 Library     Collections
-Library     JSONLibrary
-Library     os
 
 
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
 ${ENDPOINT}     usuarios
-${_id}          voY0iiKEOkfw3o11
+${_id}          0uxuPY0cbmQhpEz1
 
 *** Test Cases ***
 TC: Returns all the users (GET)
