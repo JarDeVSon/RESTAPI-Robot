@@ -32,7 +32,7 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: reports
-        - name: Output Report
-          uses: joonvena/robotframework-reporter-action@v2
+        - name: Send report to commit
+          uses: joonvena/robotframework-reporter-action@v2.1
           with:
             gh_access_token:  ${{ secrets.TOKEN }}
