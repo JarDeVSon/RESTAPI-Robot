@@ -33,6 +33,6 @@ jobs:
           with:
             name: Results
         - name: Output Results
-          uses: joovena/robotframework-reporter-action@v2
+          uses: joonvena/robotframework-reporter-action@v2
           with:
             gh_access_token:  ${{ secrets.TOKEN }}
