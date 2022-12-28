@@ -1,9 +1,8 @@
 *** Settings ***
-Suite Setup     Create Session API
+
 Resource    ../Resources/ResourceAPI.robot
 
 *** Test Cases ***
-
 TC: Returns all the users (GET)
     [Documentation]     Retorna todos os usuarios
     [Tags]      GET
