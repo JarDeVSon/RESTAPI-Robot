@@ -6,7 +6,7 @@ Library     Collections
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
 ${ENDPOINT}     usuarios
-${_id}          7lEnaYvmiVLMDcs5
+${_id}          LA1GkiTj2HKjRMxf
 
 *** Keywords ***
 Create Session API
@@ -29,7 +29,7 @@ GET On Session Request with Query Parameters "${QUERY_PARAMETERS}"
     Set Test Variable    ${RESPONSE}
 
 POST On Session Request
-    ${DATA_BODY}=   Create Dictionary       nome=vai w  email=vai@qa.com.br    password=teste      administrador=true
+    ${DATA_BODY}=   Create Dictionary       nome=vai 2  email=vai2@qa.com.br    password=teste      administrador=true
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
     ${RESPONSE}=     POST On Session     base_url      ${ENDPOINT}     json=${DATA_BODY}    headers=${HEADERS}  expected_status=201
     #auth=None #timeout=None #proxies=None #
@@ -37,8 +37,6 @@ POST On Session Request
 #    Log To Console    ${RESPONSE.status_code}
 #    Log To Console    ${RESPONSE.content}
 #    Log To Console    ${RESPONSE.headers}
-    ${BODY}=       Convert To String    ${RESPONSE.content}
-    Should Contain    ${BODY}    ${_id}
     Set Test Variable    ${RESPONSE}
 
 PUT On Session Request
