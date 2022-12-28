@@ -7,7 +7,7 @@ Library     Collections
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
 ${ENDPOINT}     usuarios
-${_id}          eQYiZniOMvpzxXFq
+${_id}          XNMGAnNb59Cmvj3F
 
 *** Test Cases ***
 TC: Returns all the users (GET)
@@ -53,7 +53,7 @@ GET On Session Request
     Set Test Variable    ${RESPONSE}
 
 POST On Session Request
-    ${BODY}=        Create Dictionary       nome=testando    email=testando@qa.com.br    password=teste      administrador=true
+    ${BODY}=        Create Dictionary       nome=testando1    email=testando1@qa.com.br    password=teste      administrador=true
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
     ${RESPONSE}=     POST On Session     base_url      ${ENDPOINT}     json=${BODY}    headers=${HEADERS}
 
@@ -63,7 +63,7 @@ POST On Session Request
     Set Test Variable    ${RESPONSE}
 
 PUT On Session Request
-    ${BODY}=        Create Dictionary       nome=alterando    email=ccc@qa.com.br       password=teste      administrador=true
+    ${BODY}=        Create Dictionary       nome=alterandoddd    email=ddd@qa.com.br       password=teste      administrador=true
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
     ${RESPONSE}=     PUT On Session     base_url      ${ENDPOINT}/${_id}     json=${BODY}    headers=${HEADERS}
 
