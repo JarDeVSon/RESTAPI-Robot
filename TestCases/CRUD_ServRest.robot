@@ -16,9 +16,9 @@ TC: Return user with query parameters (GET)
     [Documentation]     Retorna todos os usuarios
     [Tags]      GET
     Create Session API
-    GET On Session Request with Query Parameters "email=fulano@qa.com"
+    GET On Session Request with Query Parameters "nome=doideira"
     Validate Status Code    200
-    Validate Content    fulano@qa.com
+    Validate Content    doideira@qa.com.br
 
 
 TC: Add a new user (POST)
