@@ -9,14 +9,14 @@ Resource    ResourceTestTemplate.robot
 
 *** Variables ***
 
-${_ID}  D6UbwNg0jx6AY20t
+${_ID}  BvCZmxYHqYOL5twS
 
 *** Test Cases ***
 
 
 Scenario - 01 - (POST) Validar usuario inserido no ServRest
     Dado que Create Session API
-    Quando executo uma requisicao POST na API "tanqueray4", "tanqueray4@qa.com", "teste", "true"
+    Quando executo uma requisicao POST na API "tanqueray5", "tanqueray5@qa.com", "teste", "true"
     Valido Status Code  201
     Valido Conteudo     "Cadastro realizado com sucesso"
 
@@ -27,7 +27,7 @@ Scenario - 02 - (GET) Validar busca por usuarios no ServRest
 
 Scenario - 03 - (PUT) Validar usuario alterado no ServRest
     Dado que Create Session API
-    Quando executo uma requisicao PUT na API "put2", "ssscenarioput2@qa.com", "teste", "true"
+    Quando executo uma requisicao PUT na API "kkk", "ssscenar2@qa.com", "teste", "true"
     Valido Status Code  200
     Valido Conteudo     "Registro alterado com sucesso"
 Scenario - 04 - (DELETE) Validar (DELETE) usuario deletado no ServRest
@@ -40,7 +40,7 @@ Scenario - 04 - (DELETE) Validar (DELETE) usuario deletado no ServRest
 Scenario Outline 01 - (POST) Validar response das informações do usuario inserido no ServRest
     [Template]      Template Scenario Outline 01 - (POST) Validar (POST) usuario inserido no ServRest
     #NOME   #email            #senha  admin(true or false)   #statuscode    # msg sucesso
-    bora    cenariooutline@qa.com.br     faker       true            201             Cadastro realizado com sucesso
+    bora    cenario01@qa.com.br     faker       true            201             Cadastro realizado com sucesso
 
 Scenario Outline 02 - (GET) Validar response das informações do usuarios buscados no ServRest
     [Template]      Template Scenario Outline 02 - (GET) Validar response das informações dos usuarios buscados no ServRest
@@ -49,7 +49,7 @@ Scenario Outline 02 - (GET) Validar response das informações do usuarios busca
 Scenario Outline 03 - (PUT) Validar (PUT) usuario alterado no ServRest
     [Template]      Template Scenario Outline 03 - (PUT) Validar (PUT) usuario alterado no ServRest
     #NOME   #email              #senha      #admin(true or false) #statuscode # msg sucesso
-    alteera    cenariooutlineasa@qa.com.br     faker       true            200        Registro alterado com sucesso
+    alteera    cenario03@qa.com.br     faker       true            200        Registro alterado com sucesso
 
 Scenario Outline 04 - (DELETE) Validar (DELETE) usuario deletado no ServRest
     [Template]      Template Scenario Outline 04 - (DELETE) Validar (DELETE) usuario deletado no ServRest
