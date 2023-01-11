@@ -5,21 +5,6 @@ Resource        Resource.robot
 
 *** Test Cases ***
 
-TC: Returns all the users (GET)
-    [Documentation]     Retorna todos os usuarios
-    [Tags]      GET
-    Create Session API
-    GET On Session Request
-    Validate Status Code    200
-
-TC: Return user with query parameters (GET)
-    [Documentation]     Retorna todos os usuarios
-    [Tags]      GET
-    Create Session API
-    GET On Session Request with Query Parameters "nome=Fulano da Silva"
-    Validate Status Code    200
-    Validate Content    Fulano da Silva
-
 
 TC: Add a new user (POST)
     [Documentation]     Adiciona um novo usuario
@@ -28,6 +13,24 @@ TC: Add a new user (POST)
     POST On Session Request
     Validate Status Code    201
     Validate Content    Cadastro realizado com sucesso
+
+TC: Returns all the users (GET)
+    [Documentation]     Retorna todos os usuarios
+    [Tags]      GET
+    Create Session API
+    GET On Session Request
+    Validate Status Code    200
+
+TC: Return user with Query Parameters: Name and Email (GET - Params)
+    [Documentation]     Retorna usuario com os parâmetros consultados
+    [Tags]      GET
+    Create Session API
+    GET On Session Request with Query Parameters "nome=Fulano da Silva"
+    GET On Session Request with Query Parameters "email=fulano@qa.com"
+    Validate Status Code    200
+    Validate Content    Fulano da Silva
+    Validate Content    fulano@qa.com
+
 
 TC: Edit user (PUT)
     [Documentation]     Altera os dados do usuario

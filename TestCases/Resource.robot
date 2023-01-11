@@ -2,11 +2,15 @@
 Documentation   Documentacao da API: https://serverest.dev/#/
 Library     RequestsLibrary
 Library     Collections
+Library     String
+Library    JSONLibrary
+Library    FakerLibrary    locale=pt_BR
+
 
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
 ${ENDPOINT}     usuarios
-${_id}          LA1GkiTj2HKjRMxf
+${_id}           id="${id}"
 
 *** Keywords ***
 Create Session API
@@ -18,7 +22,7 @@ GET On Session Request
 #    Log to console    ${RESPONSE.status_code}
 #    Log to console    ${RESPONSE.content}
 #    Log to console    ${RESPONSE.headers}
-    Set Test Variable    ${RESPONSE}
+    Set Suite Variable    ${RESPONSE}
 
 GET On Session Request with Query Parameters "${QUERY_PARAMETERS}"
     ${RESPONSE}=    GET On Session    base_url    ${ENDPOINT}   expected_status=200     params=${QUERY_PARAMETERS}
@@ -26,34 +30,50 @@ GET On Session Request with Query Parameters "${QUERY_PARAMETERS}"
 #    Log to console    ${RESPONSE.status_code}
 #    Log to console    ${RESPONSE.content}
 #    Log to console    ${RESPONSE.headers}
-    Set Test Variable    ${RESPONSE}
+    Set Suite Variable    ${RESPONSE}
 
 POST On Session Request
-    ${DATA_BODY}=   Create Dictionary       nome=vai 2  email=vai2@qa.com.br    password=teste      administrador=true
+    ${NOMEFAKE}                 FakerLibrary.Name
+    ${EMAILFAKE}                FakerLibrary.Email
+    ${PASSWORDFAKE}             FakerLibrary.Password
+
+#    ${DATA_BODY}=   Load Json From File     Jsons/usuario.json
+    ${DATA_BODY}=   Create Dictionary   nome=${NOMEFAKE}      email=${EMAILFAKE}  password=${PASSWORDFAKE}      administrador=true
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
     ${RESPONSE}=     POST On Session     base_url      ${ENDPOINT}     json=${DATA_BODY}    headers=${HEADERS}  expected_status=201
     #auth=None #timeout=None #proxies=None #
 
 #    Log To Console    ${RESPONSE.status_code}
-#    Log To Console    ${RESPONSE.content}
+#    Log To Console    ${RESPONSE.text}
 #    Log To Console    ${RESPONSE.headers}
-    Set Test Variable    ${RESPONSE}
+#    Log To Console    ${RESPONSE.text}
+
+    ${id}=      Convert To String    ${RESPONSE.json()['_id']}
+    Set Suite Variable    ${id}
+    Set Suite Variable    ${RESPONSE}
+
 
 PUT On Session Request
-    ${BODY}=        Create Dictionary       nome=1234    email=1234@qa.com.br       password=teste      administrador=true
+    ${EMAILFAKE}                FakerLibrary.Email
+
+#    ${DATA_BODY}=   Load Json From File     Jsons/usuario.json
+    ${BODY}=   Create Dictionary   nome=Fulano da Silva      email=${EMAILFAKE}  password=teste    administrador=true
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
-    ${RESPONSE}=     PUT On Session     base_url      ${ENDPOINT}/${_id}     json=${BODY}    headers=${HEADERS}     expected_status=200
+    ${RESPONSE}=     PUT On Session     base_url      ${ENDPOINT}/${_id}   json=${BODY}    headers=${HEADERS}     expected_status=200
 
 #    Log To Console    ${RESPONSE.status_code}
 #    Log To Console    ${RESPONSE.content}
+#    Log To Console    ${RESPONSE.text}
+#    Log To Console    ${RESPONSE.json()}
 #    Log To Console    ${RESPONSE.headers}
 
-    Set Test Variable    ${RESPONSE}
+    Set Suite Variable    ${RESPONSE}
+
 
 DELETE On Session Request
     ${RESPONSE}=        DELETE On Session   base_url      ${ENDPOINT}/${_id}    expected_status=200
 #    Log To Console    ${RESPONSE.content}
-    Set Test Variable    ${RESPONSE}
+    Set Suite Variable    ${RESPONSE}
 
 Validate Status Code
      [Arguments]        ${STATUS_CODE_EXPECTED}
