@@ -10,27 +10,27 @@ Library    FakerLibrary    locale=pt_BR
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
 ${ENDPOINT}     usuarios
-${_id}           id="${id}"
+#${_id}          "${id}"
 
 *** Keywords ***
 Create Session API
-    Create Session    base_url    ${BASE_URL}      disable_warnings=True    verify=False    auth=None   timeout=None    proxies=None    headers={}  cookies={}
+    Create Session  base_url  ${BASE_URL}  disable_warnings=True  verify=False  auth=None  timeout=None  proxies=None  headers={}  cookies={}
     #auth=None #timeout=None #proxies=None #headers={Create Dictionary} #coockes{Create Dictionary}
 
 GET On Session Request
-    ${RESPONSE}=    GET On Session    base_url    ${ENDPOINT}   expected_status=200
+    ${RESPONSE}=    GET On Session  base_url  ${ENDPOINT}  expected_status=200
 #    Log to console    ${RESPONSE.status_code}
 #    Log to console    ${RESPONSE.content}
 #    Log to console    ${RESPONSE.headers}
-    Set Suite Variable    ${RESPONSE}
+    Set Suite Variable  ${RESPONSE}
 
 GET On Session Request with Query Parameters "${QUERY_PARAMETERS}"
-    ${RESPONSE}=    GET On Session    base_url    ${ENDPOINT}   expected_status=200     params=${QUERY_PARAMETERS}
+    ${RESPONSE}=  GET On Session  base_url  ${ENDPOINT}  expected_status=200  params=${QUERY_PARAMETERS}
 
 #    Log to console    ${RESPONSE.status_code}
 #    Log to console    ${RESPONSE.content}
 #    Log to console    ${RESPONSE.headers}
-    Set Suite Variable    ${RESPONSE}
+    Set Suite Variable  ${RESPONSE}
 
 POST On Session Request
     ${NOMEFAKE}                 FakerLibrary.Name
@@ -38,8 +38,8 @@ POST On Session Request
     ${PASSWORDFAKE}             FakerLibrary.Password
 
 #    ${DATA_BODY}=   Load Json From File     Jsons/usuario.json
-    ${DATA_BODY}=   Create Dictionary   nome=${NOMEFAKE}      email=${EMAILFAKE}  password=${PASSWORDFAKE}      administrador=true
-    ${HEADERS}=     Create Dictionary       Content-Type=application/json
+    ${DATA_BODY}=   Create Dictionary  nome=${NOMEFAKE}  email=${EMAILFAKE}  password=${PASSWORDFAKE}      administrador=true
+    ${HEADERS}=     Create Dictionary  Content-Type=application/json
     ${RESPONSE}=     POST On Session     base_url      ${ENDPOINT}     json=${DATA_BODY}    headers=${HEADERS}  expected_status=201
     #auth=None #timeout=None #proxies=None #
 
@@ -54,12 +54,13 @@ POST On Session Request
 
 
 PUT On Session Request
+    ${NOMEFAKE}                 FakerLibrary.Name
     ${EMAILFAKE}                FakerLibrary.Email
 
 #    ${DATA_BODY}=   Load Json From File     Jsons/usuario.json
-    ${BODY}=   Create Dictionary   nome=Fulano da Silva      email=${EMAILFAKE}  password=teste    administrador=true
+    ${BODY}=   Create Dictionary   nome=${NOMEFAKE}        email=${EMAILFAKE}  password=teste    administrador=true
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
-    ${RESPONSE}=     PUT On Session     base_url      ${ENDPOINT}/${_id}   json=${BODY}    headers=${HEADERS}     expected_status=200
+    ${RESPONSE}=     PUT On Session     base_url      ${ENDPOINT}/${id}   json=${BODY}    headers=${HEADERS}     expected_status=200
 
 #    Log To Console    ${RESPONSE.status_code}
 #    Log To Console    ${RESPONSE.content}
@@ -71,7 +72,7 @@ PUT On Session Request
 
 
 DELETE On Session Request
-    ${RESPONSE}=        DELETE On Session   base_url      ${ENDPOINT}/${_id}    expected_status=200
+    ${RESPONSE}=        DELETE On Session   base_url      ${ENDPOINT}/${id}    expected_status=200
 #    Log To Console    ${RESPONSE.content}
     Set Suite Variable    ${RESPONSE}
 
