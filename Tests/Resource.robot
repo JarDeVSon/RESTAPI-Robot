@@ -56,9 +56,10 @@ POST On Session Request
 PUT On Session Request
     ${NOMEFAKE}                 FakerLibrary.Name
     ${EMAILFAKE}                FakerLibrary.Email
+    ${PASSWORDFAKE}             FakerLibrary.Password
 
 #    ${DATA_BODY}=   Load Json From File     Jsons/usuario.json
-    ${BODY}=   Create Dictionary   nome=${NOMEFAKE}        email=${EMAILFAKE}  password=teste    administrador=true
+    ${BODY}=   Create Dictionary   nome=${NOMEFAKE}        email=${EMAILFAKE}  password=${PASSWORDFAKE}     administrador=false
     ${HEADERS}=     Create Dictionary       Content-Type=application/json
     ${RESPONSE}=     PUT On Session     base_url      ${ENDPOINT}/${id}   json=${BODY}    headers=${HEADERS}     expected_status=200
 
