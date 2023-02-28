@@ -79,7 +79,7 @@ DELETE On Session Request
 
 Validate Status Code
      [Arguments]        ${STATUS_CODE_EXPECTED}
-     Should Be Equal As Numbers    ${RESPONSE.status_code}    ${STATUS_CODE_EXPECTED}
+     Should Be Equal As Integers    ${RESPONSE.status_code}    ${STATUS_CODE_EXPECTED}
 
 Validate Content
      [Arguments]        ${CONTENT_EXPECTED}
