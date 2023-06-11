@@ -3,8 +3,8 @@ Documentation   Documentacao da API: https://serverest.dev/#/
 Library     RequestsLibrary
 Library     Collections
 Library     String
-Library    JSONLibrary
-Library    FakerLibrary    locale=pt_BR
+Library     JSONLibrary
+Library     FakerLibrary    locale=pt_BR
 
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
