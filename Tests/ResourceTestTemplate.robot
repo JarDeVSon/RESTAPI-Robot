@@ -1,6 +1,6 @@
 *** Settings ***
-Library         RequestsLibrary
-Library         JsonValidator
+Library    RequestsLibrary
+Library    JsonValidator
 Library    FakerLibrary    locale=pt_BR
 
 *** Variables ***
