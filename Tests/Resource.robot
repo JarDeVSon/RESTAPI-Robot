@@ -77,11 +77,15 @@ DELETE On Session Request
 #    Log To Console    ${RESPONSE.content}
     Set Suite Variable    ${RESPONSE}
 
+Validate Dict Item
+    [Arguments]     ${KEY}  ${VALUE}
+    Log To Console    ${RESPONSE.json()} 
+    Dictionary Should Contain Item    ${RESPONSE.json()}    ${KEY}  ${VALUE}
 Validate Status Code
      [Arguments]        ${STATUS_CODE_EXPECTED}
      Should Be Equal As Integers    ${RESPONSE.status_code}    ${STATUS_CODE_EXPECTED}
 
 Validate Content
-     [Arguments]        ${CONTENT_EXPECTED}
+     [Arguments]    ${CONTENT_EXPECTED}
      ${BODY}=       Convert To String    ${RESPONSE.content}
      Should Contain    ${BODY}    ${CONTENT_EXPECTED}

@@ -8,10 +8,11 @@ Resource        Resource.robot
 
 TC: Add a new user (POST)
     [Documentation]     Adiciona um novo usuario
-    [Tags]      POST
+    [Tags]      POST    
     Create Session API
     POST On Session Request
     Validate Status Code    201
+    Validate Dict Item    messages  Cadastro realizado com sucesso
     Validate Content    Cadastro realizado com sucesso
 
 TC: Returns all the users (GET)
