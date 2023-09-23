@@ -1,6 +1,6 @@
 # REST API Robot Framework
 
-Sample project to demonstrate REST API Robot Framework tests written with [Cypress](https://cypress.io) running on GitHub Actions.
+Sample project to demonstrate REST API tests written with [Robot Framework](https://robotframework.org/#resources) with [RequestsLibrary](https://github.com/MarketSquare/robotframework-requests#readme)running on GitHub Actions.
 
 ## Pre-requirements
 
