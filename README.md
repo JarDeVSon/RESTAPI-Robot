@@ -1,14 +1,3 @@
-# 
-
-
-## Installation
-
-Pre-requisites:
-1) Python
-2) Visual Studio Code
-
-
-
 # REST API Robot Framework
 
 Sample project to demonstrate REST API Robot Framework tests written with [Cypress](https://cypress.io) running on GitHub Actions.
@@ -34,9 +23,10 @@ Install the Following Libraries using the command Line:
 
 ## Running the tests
 
-In this project, you can run tests via CLI in both environments with the flag `-v` and generate the reports with the flag `-d` and pass the path to suite tests `Tests/TC.robot`:
-to run DEV `python -m robot -d reports -v ENVIRONMENT:dev Tests/TC.robot`
-to run HOM `python -m robot -d reports -v ENVIRONMENT:hom Tests/TC.robot`
+In this project, you can run tests via CLI in both environments with the flag `-v` generate the reports with the flag `-d` and pass the path to suite tests `Tests/TC.robot`:
+
+1) to run DEV `python -m robot -d reports -v ENVIRONMENT:dev Tests/TC.robot`
+2) to run HOM `python -m robot -d reports -v ENVIRONMENT:hom Tests/TC.robot`
 ___
 
 Made with ❤️ by [Jardeson Santos ](https://github.com/JarDeVSon).
