@@ -15,9 +15,9 @@ To clone and run this project, you will need:
 
 Install the Following Libraries using the command Line:
 
-1) `python -m pip install robotframework`
-2) `python -m pip install robotframework-requests`
-3) `python -m pip install robotframework-jsonlibrary`
+- `python -m pip install robotframework`
+- `python -m pip install robotframework-requests`
+- `python -m pip install robotframework-jsonlibrary`
 
 
 
@@ -25,8 +25,8 @@ Install the Following Libraries using the command Line:
 
 In this project, you can run tests via CLI in both environments with the flag `-v` generate the reports with the flag `-d` and pass the path to suite tests `Tests/TC.robot`:
 
-1) to run DEV `python -m robot -d reports -v ENVIRONMENT:dev Tests/TC.robot`
-2) to run HOM `python -m robot -d reports -v ENVIRONMENT:hom Tests/TC.robot`
+- to run DEV `python -m robot -d reports -v ENVIRONMENT:dev Tests/TC.robot`
+- to run HOM `python -m robot -d reports -v ENVIRONMENT:hom Tests/TC.robot`
 ___
 
 Made with ❤️ by [Jardeson Santos ](https://github.com/JarDeVSon).
