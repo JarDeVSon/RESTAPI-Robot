@@ -15,9 +15,7 @@ To clone and run this project, you will need:
 
 Install the Following Libraries using the command Line:
 
-- `python -m pip install robotframework`
-- `python -m pip install robotframework-requests`
-- `python -m pip install robotframework-jsonlibrary`
+- `python -m pip install -r requirements.txt`
 
 
 ## Running the tests

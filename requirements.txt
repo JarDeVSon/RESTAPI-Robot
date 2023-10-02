@@ -1,0 +1,9 @@
+robotframework
+robotframework-appiumlibrary
+robotframework-faker
+robotframework-jsonlibrary
+robotframework-jsonvalidator
+robotframework-pythonlibcore
+robotframework-requests
+robotframework-selenium2library
+robotframework-seleniumlibrary
