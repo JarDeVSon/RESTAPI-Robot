@@ -29,4 +29,4 @@ In this project, you can run tests via CLI in both environments with the flag `-
 - to run HOM `python -m robot -d reports -v ENVIRONMENT:hom Tests/TC.robot`
 ___
 
-Made with ❤️ by [Jardeson Santos](https://github.com/JarDeVSon)[Meu Linkedin](www.linkedin.com/in/jardeson-santosqa).
+Made with ❤️ by [Jardeson Santos](https://github.com/JarDeVSon). [Meu Linkedin](www.linkedin.com/in/jardeson-santosqa).
