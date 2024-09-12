@@ -8,7 +8,7 @@ Library     Collections
 &{BASE_URL}     dev=https://serverest.dev/#/    hom=https://serverest.dev/#/
 ${ENDPOINT}     usuarios
 ${ENVIRONMENT}  dev
-# ${ID}           ${_id}
+${ID}           ${_id}
 
 # robot -d reports -v ENVIRONMENT:dev <caminho do arquivo de teste>
 # robot -d reports -v ENVIRONMENT:hom <caminho do arquivo de teste>
@@ -41,7 +41,7 @@ CT-0002: POST user
     #ARRANGE
     Create Session    BASE_URL_ServRest    ${BASE_URL.${ENVIRONMENT}}  verify=False    disable_warnings=True
     #ACT
-    ${BODY}=    Create Dictionary   nome=Fulano da Silva    email=1213ArSA4asS113123444@qa.com.br    password=teste      administrador=true
+    ${BODY}=    Create Dictionary   nome=Fulano da Silva    email=121343A4rSA4asS113123444@qa.com.br    password=teste      administrador=true
     ${HEADERS}=     Create Dictionary   Content-Type=application/json
     ${RESPONSE}=    POST On Session   BASE_URL_ServRest     ${ENDPOINT}     json=${BODY}    headers=${HEADERS}
     Log To Console    ${BODY}
