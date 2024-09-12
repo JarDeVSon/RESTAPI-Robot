@@ -11,7 +11,7 @@ Resource    ResourceTestTemplate.robot
 
 Scenario - 01 - (POST) Validar usuario inserido no ServRest
     Dado que Create Session API
-    Quando executo uma requisicao POST na API "batata", "asasasas@qa.com", "teste", "true"
+    Quando executo uma requisicao POST na API "batata", "asas1123asas@qa.com", "teste", "true"
     eu valido Status Code   201
     eu valido Conteudo  "Cadastro realizado com sucesso"
 
@@ -35,7 +35,7 @@ Scenario - 04 - (DELETE) Validar (DELETE) usuario deletado no ServRest
 Scenario Outline 01 - (POST) Validar response das informações do usuario inserido no ServRest
     [Template]      Template Scenario Outline 01 - (POST) Validar (POST) usuario inserido no ServRest
     #NOME   #email            #senha  admin(true or false)   #statuscode    # msg sucesso
-    bora    letsgaso@qa.com.br     faker       true            201             Cadastro realizado com sucesso
+    bora    letsgas123o@qa.com.br     faker       true            201             Cadastro realizado com sucesso
 
 Scenario Outline 02 - (GET) Validar response das informações do usuarios buscados no ServRest
     [Template]      Template Scenario Outline 02 - (GET) Validar response das informações dos usuarios buscados no ServRest
