@@ -14,7 +14,7 @@ jobs:
           uses: joonvena/robotframework-docker-action@v1.0
           with:
 #            browser: chrome
-            robot_tests_dir: Tests
+            robot_tests_dir: tests
         - name: Upload Test Report
           uses: actions/upload-artifact@v1
           if: always()
