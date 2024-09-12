@@ -41,7 +41,7 @@ CT-0002: POST user
     #ARRANGE
     Create Session    BASE_URL_ServRest    ${BASE_URL.${ENVIRONMENT}}  verify=False    disable_warnings=True
     #ACT
-    ${BODY}=    Create Dictionary   nome=Fulano da Silva    email=1213343A4rSA4asS113123444@qa.com.br    password=teste      administrador=true
+    ${BODY}=    Create Dictionary   nome=Fulano da Silva    email=1213a343A4rSA4asS113123444@qa.com.br    password=teste      administrador=true
     ${HEADERS}=     Create Dictionary   Content-Type=application/json
     ${RESPONSE}=    POST On Session   BASE_URL_ServRest     ${ENDPOINT}     json=${BODY}    headers=${HEADERS}
     Log To Console    ${BODY}

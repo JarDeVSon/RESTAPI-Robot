@@ -9,13 +9,12 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Run Tests
           uses: joonvena/robotframework-docker-action@v1.0
           with:
 #            browser: chrome
             robot_tests_dir: Tests
-            robot_reports_dir: reports
             # robot_threads: 2
 
         - name: Upload Test Report
@@ -35,6 +34,6 @@ jobs:
           with:
             name: reports
         - name: Send report to commit
-          uses: joonvena/robotframework-reporter-action@v2.5
+          uses: joonvena/robotframework-reporter-action@v2.0
           with:
             gh_access_token: ${{ secrets.GITHUB_TOKEN }}
