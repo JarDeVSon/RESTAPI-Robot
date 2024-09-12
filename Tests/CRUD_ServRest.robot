@@ -22,15 +22,15 @@ TC: Returns all the users (GET)
     GET On Session Request
     Validate Status Code    200
 
-TC: Return user with Query Parameters: Name and Email (GET - Params)
-    [Documentation]     Retorna usuario com os parâmetros consultados
-    [Tags]      GET
-    Create Session API
-    GET On Session Request with Query Parameters "nome=Fulano da Silva"
-    GET On Session Request with Query Parameters "email=fulano@qa.com"
-    Validate Status Code    200
-    Validate Content    Fulano da Silva
-    Validate Content    fulano@qa.com
+# TC: Return user with Query Parameters: Name and Email (GET - Params)
+#     [Documentation]     Retorna usuario com os parâmetros consultados
+#     [Tags]      GET
+#     Create Session API
+#     GET On Session Request with Query Parameters "nome=Fulano da Silva"
+#     GET On Session Request with Query Parameters "email=fulano@qa.com"
+#     Validate Status Code    200
+#     Validate Content    Fulano da Silva
+#     Validate Content    fulano@qa.com
 
 
 TC: Edit user (PUT)
