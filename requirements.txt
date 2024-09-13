@@ -1,4 +1,4 @@
-robotframework
+robotframework==6.1
 robotframework-appiumlibrary
 robotframework-faker
 robotframework-jsonlibrary
