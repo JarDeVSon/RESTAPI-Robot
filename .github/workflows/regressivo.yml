@@ -16,7 +16,7 @@ jobs:
       with:
         # browser: 'firefox'
         # robot_threads: 2
-        robot_tests_dir: tests
+        robot_tests_dir: Tests
         robot_reports_dir: reports
 
     - name: Upload test results
