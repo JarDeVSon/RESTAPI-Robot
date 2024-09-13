@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Execute tests
-      uses: joonvena/robotframework-docker-action@v1.1
+      uses: joonvena/robotframework-docker-action@v1.0
       with:
         # browser: 'firefox'
         # robot_threads: 2
