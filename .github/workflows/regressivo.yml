@@ -20,7 +20,7 @@ jobs:
         robot_reports_dir: reports
 
     - name: Upload test results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       if: always()
       with:
         name: reports
@@ -36,9 +36,10 @@ jobs:
       with:
         name: reports
     - name: Send report to commit
-      uses: joonvena/robotframework-reporter-action@v2.1
+      uses: joonvena/robotframework-reporter-action@v2.4
       with:
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+
 
 
     - name: GitHub Pages v3
