@@ -9,7 +9,6 @@ Library     FakerLibrary    locale=pt_BR
 *** Variables ***
 ${BASE_URL}     https://serverest.dev/#/
 ${ENDPOINT}     usuarios
-${_id}          ${id}
 
 *** Keywords ***
 Create Session API

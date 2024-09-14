@@ -8,7 +8,6 @@ Library     Collections
 &{BASE_URL}     dev=https://serverest.dev/#/    hom=https://serverest.dev/#/
 ${ENDPOINT}     usuarios
 ${ENVIRONMENT}  dev
-${ID}           ${_id}
 
 # robot -d reports -v ENVIRONMENT:dev <caminho do arquivo de teste>
 # robot -d reports -v ENVIRONMENT:hom <caminho do arquivo de teste>
