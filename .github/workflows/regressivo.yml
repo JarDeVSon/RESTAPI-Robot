@@ -11,8 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Execute tests
-      uses: joonvena/robotframework-docker-action@v1.0
+    - name: Robot Framework
+      uses: frafaelptu/robotframework-docker-action-run-tests@v2.0.0
       with:
         # browser: 'firefox'
         # robot_threads: 2
