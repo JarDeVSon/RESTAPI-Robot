@@ -8,8 +8,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: ppodgorsek/robot-framework:latest
     steps:
     - uses: actions/checkout@v4
 
