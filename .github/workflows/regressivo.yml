@@ -8,11 +8,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: ppodgorsek/robot-framework:latest
     steps:
     - uses: actions/checkout@v4
 
-    - name: Robot Framework
-      uses: frafaelptu/robotframework-docker-action-run-tests@v2.0.0
+    - name: Execute tests
+      uses: joonvena/robotframework-docker-action@v1.0
       with:
         # browser: 'firefox'
         # robot_threads: 2
