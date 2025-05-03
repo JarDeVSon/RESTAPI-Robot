@@ -38,6 +38,7 @@ jobs:
     - name: Send report to commit
       uses: joonvena/robotframework-reporter-action@v2
       with:
+        report_path: reports
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: GitHub Pages v3
