@@ -36,7 +36,7 @@ jobs:
       with:
         name: reports
     - name: Send report to commit
-      uses: joonvena/robotframework-reporter-action@v2.4
+      uses: joonvena/robotframework-reporter-action@v2.3
       with:
         report_path: reports
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
