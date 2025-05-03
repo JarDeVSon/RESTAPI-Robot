@@ -13,7 +13,6 @@ jobs:
 
     - name: Execute tests
       uses: joonvena/robotframework-docker-action@v1.0
-      continue-on-error: true
       with:
         # browser: 'firefox'
         # robot_threads: 2
